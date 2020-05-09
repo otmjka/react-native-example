@@ -6,45 +6,20 @@
  * @flow strict-local
  */
 
-import _ from 'lodash';
 import React, {Component} from 'react';
 import {ScrollView, StyleSheet} from 'react-native';
-// import {
-//   SafeAreaView,
-//   StyleSheet,
-//   ScrollView,
-//   View,
-//   Text,
-//   StatusBar,
-// } from 'react-native';
 
-// import {
-//   Header,
-//   LearnMoreLinks,
-//   Colors,
-//   DebugInstructions,
-//   ReloadInstructions,
-// } from 'react-native/Libraries/NewAppScreen';
-import cameraSelected from './icons/cameraSelected.png';
-import search from './icons/search.png';
-import tags from './icons/tags.png';
-import collections from './icons/collections.png';
-import richText from './icons/richText.png';
-import home from './icons/home.png'
 import {
-  ActionBar,
+  Button,
+  Colors,
   Typography,
   View,
   Text,
+  TextField,
   MaskedInput,
 } from 'react-native-ui-lib'; //eslint-disable-line
-const actions = [
-  {style: {flexDirection: 'column'}, iconStyle: {width: 36}, label: 'Главная', iconSource: home},
-  {style: {flexDirection: 'column'}, iconStyle: {width: 36}, label: 'Поиск', iconSource: search},
-  {style: {flexDirection: 'column'}, iconStyle: {width: 25}, label: 'Корзина', iconSource: tags},
-  {style: {flexDirection: 'column'}, iconStyle: {width: 25}, label: 'Профиль', iconSource: collections},
-  {style: {flexDirection: 'column'}, iconStyle: {width: 25}, label: 'Еще', iconSource: richText},
-];
+import ActionBar from './src/components/ActionBar';
+import pad from './src/utils/pad';
 
 export default class App extends Component {
   constructor(props) {
@@ -55,41 +30,17 @@ export default class App extends Component {
     };
   }
 
-  componentDidMount() {
-    // setTimeout(() => {
-    //   this.minput.focus();
-    // }, 500);
-  }
-
   renderTimeText(value) {
-    const paddedValue = _.padStart(value, 4, '0');
-    const hours = paddedValue.substr(0, 2);
-    const minutes = paddedValue.substr(2, 2);
+    const maskedValue = value + pad(value);
+    const part1 = maskedValue.substr(0, 3);
+    const part2 = maskedValue.substr(3, 3);
+    const part3 = maskedValue.substr(6, 2);
+    const part4 = maskedValue.substr(8, 2);
 
     return (
-      <Text text20 dark20 center>
-        {hours}
-        <Text red10>h</Text>
-        {minutes}
-        <Text red10>m</Text>
+      <Text text16 dark20 center>
+        +7 ({part1}) {part2}-{part3}-{part4}
       </Text>
-    );
-  }
-
-  renderPrice(value) {
-    const hasValue = Boolean(value && value.length > 0);
-    return (
-      <View row center>
-        <Text text30 dark50>
-          -
-        </Text>
-        <Text text30 dark10={hasValue} dark60={!hasValue}>
-          {hasValue ? value : '00'}
-        </Text>
-        <Text text80 dark60>
-          $
-        </Text>
-      </View>
     );
   }
 
@@ -99,38 +50,117 @@ export default class App extends Component {
         <ScrollView
           contentContainerStyle={styles.container}
           keyboardShouldPersistTaps="always">
-          <Text text40 marginB-20>
-            Masked Inputs
-          </Text>
+          <View row center marginT-40 marginB-40>
+            <Text text40 marginB-20>
+              Вход
+            </Text>
+          </View>
+          <View
+            row
+            center
+            marginB-40
+            style={{
+              borderWidth: 1,
+              borderColor: Colors.grey10,
 
-          <Text text70 marginT-20>
-            Time Format
-          </Text>
-          <MaskedInput
-            ref={r => (this.minput = r)}
-            renderMaskedText={this.renderTimeText}
-            keyboardType={'numeric'}
-            maxLength={4}
-            value={'15'}
-          />
+              height: 60,
+              paddingLeft: 10,
+              borderRadius: 5,
+            }}>
+            <MaskedInput
+              placeholder="Телефон *"
+              renderMaskedText={this.renderTimeText}
+              keyboardType={'numeric'}
+              maxLength={10}
+              value={''}
+              style={{backgroundColor: 'red'}}
+            />
+          </View>
+          <View
+            row
+            center
+            marginB-40
+            style={{
+              borderWidth: 1,
+              borderColor: Colors.grey10,
 
-          <Text text70 marginT-40>
-            Price/Discount
-          </Text>
-          <MaskedInput
-            renderMaskedText={this.renderPrice}
-            keyboardType={'numeric'}
-          />
+              height: 60,
+              paddingLeft: 10,
+              borderRadius: 5,
+            }}>
+            <TextField
+              placeholder={'Пароль'}
+              floatingPlaceholder={true}
+              hideUnderline
+              style={{
+                width: '100%',
+              }}
+            />
+          </View>
+          <View row center>
+            <Button style={styles.loginBtn}>
+              <Text style={styles.loginText}>Войти</Text>
+            </Button>
+          </View>
+          <View row center>
+            <Button link>
+              <Text style={styles.linkBtnSm}>
+                Забыл пароль или поменял телефон!
+              </Text>
+            </Button>
+          </View>
+          <View style={styles.lineStyle} />
+          <View row center>
+            <Text style={styles.text}>Еще нет аккаунта?</Text>
+          </View>
+          <View row center>
+            <Button link>
+              <Text style={styles.linkBtn}>Зарегистрируйтесь</Text>
+            </Button>
+          </View>
         </ScrollView>
-        <View style={styles.page}>
-          <ActionBar centered actions={actions} />
-        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  loginBtn: {
+    backgroundColor: '#1fbfaf',
+    borderRadius: 5,
+    height: 60,
+    width: '100%',
+    marginBottom: 30,
+  },
+  loginText: {
+    color: '#fff',
+    fontFamily: 'Montserrat-SemiBold',
+    fontSize: 18,
+  },
+  lineStyle: {
+    borderWidth: 0.5,
+    borderColor: '#ddd',
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: 40,
+    marginBottom: 40,
+  },
+  linkBtn: {
+    fontSize: 18,
+    color: '#1fbfaf',
+    fontFamily: 'Montserrat-SemiBold',
+  },
+  linkBtnSm: {
+    fontSize: 16,
+    color: '#1fbfaf',
+    fontFamily: 'Montserrat-SemiBold',
+  },
+  text: {
+    color: '#444',
+    fontSize: 18,
+    fontFamily: 'Montserrat-SemiBold',
+    marginBottom: 5,
+  },
   container: {
     flexDirection: 'column',
     justifyContent: 'flex-start',
@@ -140,10 +170,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    ...Typography.text20,
+    // ...Typography.text20,
+    color: 'red',
   },
   header: {
-    ...Typography.text60,
+    // ...Typography.text60,
     marginVertical: 20,
+    color: 'red',
+  },
+  actionBarLabel: {
+    fontFamily: 'Montserrat-Regular',
   },
 });
