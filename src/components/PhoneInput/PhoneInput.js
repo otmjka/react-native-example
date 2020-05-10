@@ -19,11 +19,12 @@ export default function PhoneInput({errors, name, setValue}) {
       setValue(name, value);
     }
   }, [name, setValue, value]);
-  const hasError = !!errors[name];
+  const hasError = !valid;
   let errStyl = {};
   if (hasError) {
     errStyl = styles.error;
   }
+  const mask = value + '+7 (___) ___-__-__'.substr(value.length, MASK.length)
   return (
     <View style={styles.root}>
       <View style={styles.inputGroup}>
@@ -44,7 +45,7 @@ export default function PhoneInput({errors, name, setValue}) {
           ref={inputEl}
         />
         <Text style={styles.placeholder}>
-        +7 (___) ___-__-__
+        {mask}
         </Text>
         </View>
       </View>

@@ -7,17 +7,20 @@ import styles from './styles';
 export default function PasswordField({name, setValue, errors}) {
   const [value, handleChange] = useState('');
   const [secureTextEntry, setSecureTextEntry] = useState(true);
-
   useEffect(() => {
     if (value) {
+      console.log('!!!')
       setValue(name, value);
     }
+    console.log(value, errors, name)
   }, [name, setValue, value]);
-  const hasError = !!errors[name];
+
+  const hasError = value.length === 0;
   let errStyl = {};
   if (hasError) {
     errStyl = styles.error;
   }
+  console.log(')))))', errStyl)
   return (
     <View style={styles.root}>
       <View style={styles.inputGroup}>
