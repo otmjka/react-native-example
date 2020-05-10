@@ -7,7 +7,7 @@ import {actions} from './enums';
 export default function AppBar() {
   return (
     <View style={styles.page}>
-      <ActionBar centered actions={actions} />
+      <ActionBar style={{height: 70, borderTopWidth: 1, borderColor: '#ccc'}} centered actions={actions} />
     </View>
   );
 }

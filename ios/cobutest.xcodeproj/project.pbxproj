@@ -22,9 +22,9 @@
 		4838A4FB2466D2250094D761 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4838A4E92466D2250094D761 /* Montserrat-Bold.ttf */; };
 		4838A4FD2466D5F80094D761 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4838A4FC2466D5F80094D761 /* Montserrat-Regular.ttf */; };
 		4838A4FF2466E58B0094D761 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4838A4FE2466E58B0094D761 /* Montserrat-SemiBold.ttf */; };
-		5E0F1D088A4F110A95918FD6 /* libPods-cobutest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF2FEDFEF134598359453620 /* libPods-cobutest.a */; };
 		67A9773D95520FC489D23178 /* libPods-cobutest-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EAB1130049853FBC7D5215 /* libPods-cobutest-tvOSTests.a */; };
-		B49C3B7B098DCD41638FF4EE /* libPods-cobutest-cobutestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 154C613F8C7C0A834C37B90D /* libPods-cobutest-cobutestTests.a */; };
+		758138645E3C353A22B14843 /* libPods-cobutest-cobutestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31A5BB19BA5A957C6470BAD1 /* libPods-cobutest-cobutestTests.a */; };
+		D7970EEC8FAB4D65256A2AAF /* libPods-cobutest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E51EEB720BCFAB7D0E319FD /* libPods-cobutest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,10 +57,10 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = cobutest/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = cobutest/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = cobutest/main.m; sourceTree = "<group>"; };
-		154C613F8C7C0A834C37B90D /* libPods-cobutest-cobutestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cobutest-cobutestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7E8CCF30F327BC85C477D6 /* Pods-cobutest-cobutestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cobutest-cobutestTests.debug.xcconfig"; path = "Target Support Files/Pods-cobutest-cobutestTests/Pods-cobutest-cobutestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* cobutest-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cobutest-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* cobutest-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cobutest-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31A5BB19BA5A957C6470BAD1 /* libPods-cobutest-cobutestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cobutest-cobutestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4838A4D92466D2240094D761 /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
 		4838A4E82466D2250094D761 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
 		4838A4E92466D2250094D761 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -68,6 +68,7 @@
 		4838A4FE2466E58B0094D761 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBold.ttf"; path = "../../../../Downloads/Montserrat/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		4C58D7FF7567A658486E568F /* Pods-cobutest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cobutest.release.xcconfig"; path = "Target Support Files/Pods-cobutest/Pods-cobutest.release.xcconfig"; sourceTree = "<group>"; };
 		5BEBD9F2CF0D70204482C04B /* Pods-cobutest-cobutestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cobutest-cobutestTests.release.xcconfig"; path = "Target Support Files/Pods-cobutest-cobutestTests/Pods-cobutest-cobutestTests.release.xcconfig"; sourceTree = "<group>"; };
+		6E51EEB720BCFAB7D0E319FD /* libPods-cobutest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cobutest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93FCC2F824990C3F1EF6B88C /* Pods-cobutest-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cobutest-tvOS.release.xcconfig"; path = "Target Support Files/Pods-cobutest-tvOS/Pods-cobutest-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		B59556C3EA0270EB6B710465 /* Pods-cobutest-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cobutest-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-cobutest-tvOSTests/Pods-cobutest-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		E16F3EB00F2CC61A91AA4C24 /* Pods-cobutest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cobutest.debug.xcconfig"; path = "Target Support Files/Pods-cobutest/Pods-cobutest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 		E7BF742EBCFA383723C7F874 /* Pods-cobutest-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cobutest-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-cobutest-tvOSTests/Pods-cobutest-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		EF2FEDFEF134598359453620 /* libPods-cobutest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cobutest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7EAB1130049853FBC7D5215 /* libPods-cobutest-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cobutest-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B49C3B7B098DCD41638FF4EE /* libPods-cobutest-cobutestTests.a in Frameworks */,
+				758138645E3C353A22B14843 /* libPods-cobutest-cobutestTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E0F1D088A4F110A95918FD6 /* libPods-cobutest.a in Frameworks */,
+				D7970EEC8FAB4D65256A2AAF /* libPods-cobutest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,10 +151,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				EF2FEDFEF134598359453620 /* libPods-cobutest.a */,
-				154C613F8C7C0A834C37B90D /* libPods-cobutest-cobutestTests.a */,
 				E2E39FEF1BCFA38CB31E2323 /* libPods-cobutest-tvOS.a */,
 				F7EAB1130049853FBC7D5215 /* libPods-cobutest-tvOSTests.a */,
+				6E51EEB720BCFAB7D0E319FD /* libPods-cobutest.a */,
+				31A5BB19BA5A957C6470BAD1 /* libPods-cobutest-cobutestTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
