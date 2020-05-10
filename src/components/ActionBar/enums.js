@@ -1,4 +1,3 @@
-import cameraSelected from '../../../icons/cameraSelected.png';
 import search from '../../../icons/search.png';
 import shop from '../../../icons/shop.png';
 import face from '../../../icons/face.png';
