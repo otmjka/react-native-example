@@ -1,10 +1,6 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  phone: {
-    fontFamily: 'Montserrat',
-    fontSize: 18,
-  },
   loginBtn: {
     backgroundColor: '#1fbfaf',
     borderRadius: 5,
@@ -38,24 +34,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: 'Montserrat-SemiBold',
     marginBottom: 5,
-  },
-  container: {
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    padding: 25,
-  },
-  page: {
-    flex: 1,
-  },
-  title: {
-    color: 'red',
-  },
-  header: {
-    marginVertical: 20,
-    color: 'red',
-  },
-  actionBarLabel: {
-    fontFamily: 'Montserrat-Regular',
   },
 });
 

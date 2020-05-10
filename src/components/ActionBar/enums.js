@@ -1,41 +1,44 @@
-import search from '../../../icons/search.png';
-import shop from '../../../icons/shop.png';
-import face from '../../../icons/face.png';
-import more from '../../../icons/more.png';
-import home from '../../../icons/home.png';
+import search from '../../../assets/icons/search.png';
+import shop from '../../../assets/icons/shop.png';
+import face from '../../../assets/icons/face.png';
+import more from '../../../assets/icons/more.png';
+import home from '../../../assets/icons/home.png';
+
+const commonProps = {
+  style: {flexDirection: 'column'},
+  iconStyle: {width: 36},
+  labelStyle: {
+    fontFamily: 'Montserrat-Regular',
+  },
+};
 
 export const actions = [
   {
-    style: {flexDirection: 'column'},
-    iconStyle: {width: 36},
+    ...commonProps,
     label: 'Главная',
     iconSource: home,
     color: 'grey',
   },
   {
-    style: {flexDirection: 'column'},
-    iconStyle: {width: 36},
+    ...commonProps,
     label: 'Поиск',
     iconSource: search,
     color: 'grey',
   },
   {
-    style: {flexDirection: 'column'},
-    iconStyle: {width: 36},
+    ...commonProps,
     label: 'Корзина',
     iconSource: shop,
     color: 'grey',
   },
   {
-    style: {flexDirection: 'column'},
-    iconStyle: {width: 36},
+    ...commonProps,
     label: 'Профиль',
     iconSource: face,
     color: '#1fbfaf',
   },
   {
-    style: {flexDirection: 'column'},
-    iconStyle: {width: 36},
+    ...commonProps,
     label: 'Еще',
     iconSource: more,
     color: 'grey',

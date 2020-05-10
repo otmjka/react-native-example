@@ -7,28 +7,35 @@ import {Button, View, Text} from 'react-native-ui-lib'; //eslint-disable-line
 
 import PasswordField from '../PasswordField';
 import PhoneInput from '../PhoneInput';
-import SubmitModal from '../SubmitModal';
 import Heading from '../Heading';
 
 import styles from './styles';
 
 export default function LoginForm({onSubmit, onForgot, onSignup}) {
   const [modalVisible, setModalVisible] = useState(true);
-  const {errors, register, setValue, handleSubmit, getValues, formState} = useForm();
-  // Read the formState before render to subscribe the form state through Proxy dirty, isSubmitting, touched, submitCount
-  const { isSubmitted } = formState;
+  const {errors, register, setValue, handleSubmit, formState} = useForm();
+  const {isSubmitted} = formState;
   useEffect(() => {
     register({name: 'phoneNumber'}, {required: true});
     register({name: 'password'}, {required: true});
   }, [register]);
-  console.log(errors);
   return (
     <>
       <Heading title="Вход" />
 
-      <PhoneInput setValue={setValue} name="phoneNumber" errors={errors} isSubmitted={isSubmitted}/>
+      <PhoneInput
+        setValue={setValue}
+        name="phoneNumber"
+        errors={errors}
+        isSubmitted={isSubmitted}
+      />
 
-      <PasswordField setValue={setValue} name="password" errors={errors} isSubmitted={isSubmitted}/>
+      <PasswordField
+        setValue={setValue}
+        name="password"
+        errors={errors}
+        isSubmitted={isSubmitted}
+      />
 
       <View row center>
         <Button

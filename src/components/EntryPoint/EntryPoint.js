@@ -6,7 +6,7 @@ import {View} from 'react-native-ui-lib'; //eslint-disable-line
 import ActionBar from '../ActionBar';
 import LoginForm from '../../containers/LoginFormContainer';
 
-import styles from './styles'
+import styles from './styles';
 
 export default function EntryPoint() {
   return (
@@ -14,9 +14,7 @@ export default function EntryPoint() {
       <ScrollView
         contentContainerStyle={styles.container}
         keyboardShouldPersistTaps="always">
-
-      <LoginForm />
-
+        <LoginForm />
       </ScrollView>
       <ActionBar />
     </View>
