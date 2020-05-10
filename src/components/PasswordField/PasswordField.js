@@ -4,23 +4,21 @@ import {View, Text} from 'react-native-ui-lib';
 import VisiblitySvg from '../VisiblitySvg';
 import styles from './styles';
 
-export default function PasswordField({name, setValue, errors}) {
+export default function PasswordField({name, setValue, errors, isSubmitted}) {
   const [value, handleChange] = useState('');
   const [secureTextEntry, setSecureTextEntry] = useState(true);
   useEffect(() => {
     if (value) {
-      console.log('!!!')
       setValue(name, value);
     }
-    console.log(value, errors, name)
   }, [name, setValue, value]);
 
-  const hasError = value.length === 0;
+  const hasError = value.length === 0 && isSubmitted;
   let errStyl = {};
   if (hasError) {
     errStyl = styles.error;
   }
-  console.log(')))))', errStyl)
+
   return (
     <View style={styles.root}>
       <View style={styles.inputGroup}>

@@ -7,7 +7,7 @@ import styles from './styles';
 
 const MASK = '+7 (999) 999-99-99';
 
-export default function PhoneInput({errors, name, setValue}) {
+export default function PhoneInput({errors, name, setValue, isSubmitted}) {
   const inputEl = useRef(null);
   const [value, handleChange] = useState('+7 (');
   const [valid, setValid] = useState(false);
@@ -19,12 +19,12 @@ export default function PhoneInput({errors, name, setValue}) {
       setValue(name, value);
     }
   }, [name, setValue, value]);
-  const hasError = !valid;
+  const hasError = !valid && isSubmitted;
   let errStyl = {};
   if (hasError) {
     errStyl = styles.error;
   }
-  const mask = value + '+7 (___) ___-__-__'.substr(value.length, MASK.length)
+  const mask = value + '+7 (___) ___-__-__'.substr(value.length, MASK.length);
   return (
     <View style={styles.root}>
       <View style={styles.inputGroup}>
@@ -33,20 +33,20 @@ export default function PhoneInput({errors, name, setValue}) {
           <Text>*</Text>
         </Text>
         <View style={{position: 'relative'}}>
+        <View style={styles.placeholderCont}>
+        <Text style={styles.placeholder}>{mask}</Text>
+        </View>
+          <TextInputMask
+            style={styles.phone}
+            type={'custom'}
+            options={{
+              mask: MASK,
+            }}
+            value={value}
+            onChangeText={handleChange}
+            ref={inputEl}
+          />
 
-        <TextInputMask
-          style={styles.phone}
-          type={'custom'}
-          options={{
-            mask: MASK,
-          }}
-          value={value}
-          onChangeText={handleChange}
-          ref={inputEl}
-        />
-        <Text style={styles.placeholder}>
-        {mask}
-        </Text>
         </View>
       </View>
       {valid && <CheckSvg />}

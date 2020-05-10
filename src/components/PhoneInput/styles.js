@@ -21,22 +21,26 @@ const styles = StyleSheet.create({
   inputGroup: {
     flex: 1,
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   phone: {
     fontFamily: 'Montserrat-SemiBold',
     fontSize: 18,
-    color: '#777'
+    color: '#777',
   },
   error: {
     color: 'red',
   },
+  placeholderCont: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+  },
   placeholder: {
-    position: 'absolute', left: 0, top: 0,
     fontFamily: 'Montserrat-SemiBold',
     fontSize: 18,
-    color: '#777'
-  }
+    color: '#777',
+  },
 });
 
 export default styles;

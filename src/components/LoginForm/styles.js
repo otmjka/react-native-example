@@ -20,8 +20,6 @@ const styles = StyleSheet.create({
   lineStyle: {
     borderWidth: 0.5,
     borderColor: '#ddd',
-    marginLeft: 10,
-    marginRight: 10,
     marginTop: 40,
     marginBottom: 40,
   },
@@ -36,7 +34,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat-SemiBold',
   },
   text: {
-    color: '#444',
+    color: '#777',
     fontSize: 18,
     fontFamily: 'Montserrat-SemiBold',
     marginBottom: 5,
@@ -50,11 +48,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    // ...Typography.text20,
     color: 'red',
   },
   header: {
-    // ...Typography.text60,
     marginVertical: 20,
     color: 'red',
   },
