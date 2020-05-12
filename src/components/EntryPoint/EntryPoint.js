@@ -11,10 +11,12 @@ import styles from './styles';
 export default function EntryPoint() {
   return (
     <View flex>
+
       <ScrollView
         contentContainerStyle={styles.container}
         keyboardShouldPersistTaps="always">
         <LoginForm />
+
       </ScrollView>
       <ActionBar />
     </View>

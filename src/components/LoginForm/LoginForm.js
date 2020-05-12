@@ -8,6 +8,7 @@ import {Button, View, Text} from 'react-native-ui-lib'; //eslint-disable-line
 import PasswordField from '../PasswordField';
 import PhoneInput from '../PhoneInput';
 import Heading from '../Heading';
+import FloatingPlaceholder from '../PhoneInput/FloatingPlaceholder';
 
 import styles from './styles';
 

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {TouchableHighlight, TextInput} from 'react-native';
 import {View, Text} from 'react-native-ui-lib';
 import VisiblitySvg from '../VisiblitySvg';
+import FloatingPlaceholder from '../PhoneInput/FloatingPlaceholder';
 import styles from './styles';
 
 export default function PasswordField({name, setValue, errors, isSubmitted}) {
@@ -12,8 +13,8 @@ export default function PasswordField({name, setValue, errors, isSubmitted}) {
       setValue(name, value);
     }
   }, [name, setValue, value]);
-
-  const hasError = value.length === 0 && isSubmitted;
+  const hasValue = value.length > 0
+  const hasError = !hasValue && isSubmitted;
   let errStyl = {};
   if (hasError) {
     errStyl = styles.error;
@@ -22,10 +23,7 @@ export default function PasswordField({name, setValue, errors, isSubmitted}) {
   return (
     <View style={styles.root}>
       <View style={styles.inputGroup}>
-        <Text style={{...styles.label, ...errStyl}}>
-          Пароль
-          <Text>*</Text>
-        </Text>
+        <FloatingPlaceholder placeholder="Пароль" start={hasValue}/>
         <TextInput
           type="password"
           secureTextEntry={secureTextEntry}

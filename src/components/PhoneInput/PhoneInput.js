@@ -2,7 +2,10 @@ import React, {useState, useEffect, useRef} from 'react';
 import {Alert} from 'react-native';
 import {TextInputMask} from 'react-native-masked-text';
 import {View, Text} from 'react-native-ui-lib';
+
 import CheckSvg from '../CheckSvg';
+import FloatingPlaceholder from '../PhoneInput/FloatingPlaceholder';
+
 import styles from './styles';
 
 const MASK = '+7 (999) 999-99-99';
@@ -11,7 +14,8 @@ export default function PhoneInput({errors, name, setValue, isSubmitted}) {
   const inputEl = useRef(null);
   const [value, handleChange] = useState('+7 (');
   const [valid, setValid] = useState(false);
-
+  const [float, setFloat] = useState(false)
+  const hasValue = value.length > 4;
   useEffect(() => {
     const checkedValid = MASK.length === value.length;
     setValid(checkedValid);
@@ -28,25 +32,23 @@ export default function PhoneInput({errors, name, setValue, isSubmitted}) {
   return (
     <View style={styles.root}>
       <View style={styles.inputGroup}>
-        <Text style={{...styles.label, ...errStyl}}>
-          Телефон
-          <Text>*</Text>
-        </Text>
+        <FloatingPlaceholder placeholder="Телефон" start={float || hasValue} />
         <View style={{position: 'relative'}}>
-        <View style={styles.placeholderCont}>
-        <Text style={styles.placeholder}>{mask}</Text>
-        </View>
+          {(float || hasValue) && <View style={styles.placeholderCont}>
+            <Text style={styles.placeholder}>{mask}</Text>
+          </View>}
           <TextInputMask
-            style={styles.phone}
+            style={[styles.phone, {color: float ? '#555' : 'transparent'}]}
             type={'custom'}
             options={{
               mask: MASK,
             }}
             value={value}
             onChangeText={handleChange}
+            onFocus={() => setFloat(true)}
+            onBlur={() => setFloat(false)}
             ref={inputEl}
           />
-
         </View>
       </View>
       {valid && <CheckSvg />}
